@@ -7,6 +7,11 @@
   justify-content: center;
   border: 1px solid black;
   margin: 0 7.5px 15px;
+  
+  // 因為用了 &:hover 所以當滑鼠hover時, background-image 會變大
+  // 這變大會超過原本 <div> 的大小, 這叫做overflow
+  // 因為 變大又超過 <div> 的大小就遮到其他的 element 了
+  // 所以, 為了讓他變大又不超過 <div> 的大小, 就設置了 overflow: hidden;
   overflow: hidden;
 
   &:hover {
@@ -22,6 +27,7 @@
     }
   }
 
+  // 下面2張圖要大一點, 所以故意設置
   &.large {
     height: 380px;
   }
@@ -51,6 +57,7 @@
     border: 1px solid black;
     background-color: white;
     opacity: 0.7;
+    // 為了讓 content <div> 在 background-image <div> 中
     position: absolute;
 
     .title {
